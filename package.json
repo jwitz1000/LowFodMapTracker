@@ -1,0 +1,28 @@
+{
+  "name": "LowFodMapTracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "path": "^0.12.7",
+    "sequelize": "^5.21.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/namrataffy/LowFodMapTracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/namrataffy/LowFodMapTracker/issues"
+  },
+  "homepage": "https://github.com/namrataffy/LowFodMapTracker#readme"
+}
