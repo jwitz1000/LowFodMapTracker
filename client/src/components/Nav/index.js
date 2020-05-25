@@ -25,7 +25,7 @@ const TheNav = (props) => {
         <NavbarBrand href="/">Low Fod Map Tracker</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
+          <Nav className="ml-auto" navbar>
             <NavItem>
               <NavLink href="/team/">Team Page</NavLink>
             </NavItem>

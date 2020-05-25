@@ -5,12 +5,13 @@ import Home from "./pages/Home";
 import Team from "./pages/Team";
 import NoMatch from "./pages/NoMatch";
 
-// import NavBar from "./components/NavBar";
-// import Footer from "./components/Footer";
+import TheNav from "./components/Nav";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <Router>
+      <TheNav />
       <div className="page-content">
         <Switch>
           <Route exact path="/" component={Home} />
@@ -19,6 +20,7 @@ function App() {
           <Route component={NoMatch} />
         </Switch>
       </div>
+      <Footer />
     </Router>
   );
 }

@@ -1,10 +1,8 @@
 import React from "react";
-import TheNav from "../components/Nav";
 
 const Home = (props) => {
   return (
     <div>
-      <TheNav />
       <div className="container mt-5 clearfix">
         <div className="row">
           <div className="col-12 text-center px-5">
