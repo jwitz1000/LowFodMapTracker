@@ -2,8 +2,8 @@ import React from "react";
 
 const Team = (props) => {
   return (
-    <div>
-      <div>Team</div>
+    <div style={{ color: `green` }}>
+      <div style={{ color: `red` }}>Team</div>
       <div>page</div>
     </div>
   );

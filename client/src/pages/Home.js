@@ -1,72 +1,23 @@
 import React from "react";
+import TheNav from "../components/Nav";
 
 const Home = (props) => {
   return (
     <div>
+      <TheNav />
       <div className="container mt-5 clearfix">
         <div className="row">
           <div className="col-12 text-center px-5">
             <h1 className="display-4">
               Welcome to <br />
-              <img
-                src="/assets/img/logo-dark.png"
-                className="my-3"
-                style={{ width: "175px", height: "auto" }}
-              />
+              Low Fod Map Tracker
             </h1>
             <p className="lead my-3">
-              <em>Splitsy</em> allows you to divide up a receipt by simply
-              uploading an image. <br />
-              Why waste time doing menial math? Let us do the work for you!
+              <em>Low Fod Map Tracker</em> allows you to track your IBS/IBD
+              symptoms and come up with a diet that works for you! <br />
+              Make an accoutn and give it a try
             </p>
-            <p className="my-3">
-              Click Register or Login in the top right corner to get started.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="modal" tabIndex="-1" role="dialog" id="loginModal">
-        <div className="modal-dialog" role="document">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title">Register or Login</h5>
-              <button
-                type="button"
-                className="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div className="modal-body">
-              <form>
-                <div className="alert alert-danger" role="alert">
-                  This is what an error message looks like.
-                </div>
-                <div className="form-group">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Username"
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    type="password"
-                    className="form-control"
-                    placeholder="Password"
-                  />
-                </div>
-              </form>
-            </div>
-            <div className="modal-footer">
-              <button className="btn btn-light mr-2">Login</button>
-              <button className="btn btn-primary bg-orange border-orange">
-                Register
-              </button>
-            </div>
+            <p className="my-3">I love PUUUUS</p>
           </div>
         </div>
       </div>
