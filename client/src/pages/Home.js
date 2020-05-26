@@ -15,7 +15,7 @@ const Home = (props) => {
               symptoms and come up with a diet that works for you! <br />
               Make an accoutn and give it a try
             </p>
-            <p className="my-3">I love PUUUUS</p>
+            <p className="my-3">I love my friends and family!!</p>
           </div>
         </div>
       </div>
