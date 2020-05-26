@@ -3,19 +3,14 @@ import React from "react";
 const Team = (props) => {
   return (
     <div>
-      <header
-        id="MainHeader"
-        class="team-header"
-        style={{ marginLeft: `10vw` }}
-      >
-        <img
-          class="logo"
-          src={process.env.PUBLIC_URL + "/assets/images/logo.png"}
-        />
-        <h1>Team</h1>
-      </header>
-
-      <div class="container">
+      <div class="container team">
+        <div>
+          <img
+            class="logo"
+            src={process.env.PUBLIC_URL + "/assets/images/logo.png"}
+          />
+          <h1>Team</h1>
+        </div>
         <div class="row">
           <div class="col-md-6">
             <img
