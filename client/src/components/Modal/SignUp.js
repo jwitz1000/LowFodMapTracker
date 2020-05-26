@@ -104,7 +104,7 @@ const SignUp = (props) => {
           <Button
             color="primary"
             onClick={handleFormSubmit}
-            className="btn-orange"
+            className="btn-dark"
           >
             Register{" "}
           </Button>
