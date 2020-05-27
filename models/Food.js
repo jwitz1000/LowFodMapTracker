@@ -27,10 +27,6 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.FLOAT,
       allowNull: true,
     },
-    safe: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-    },
   });
 
   Food.associate = function (models) {
