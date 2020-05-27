@@ -27,3 +27,25 @@ function userGenerate(users) {
 }
 
 userGenerate(users);
+
+let foods = [
+  {
+    label: "Apple",
+    allowed: true,
+  },
+  {
+    label: "banana",
+    allowed: false,
+  },
+  {
+    label: "burger",
+    allowed: false,
+  },
+];
+function foodGenerate(foods) {
+  for (var i = 0; i < foods.length; i++) {
+    db.Food.create(foods[i]);
+  }
+}
+
+foodGenerate(foods);

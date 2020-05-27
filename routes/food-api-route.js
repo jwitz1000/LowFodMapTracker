@@ -35,7 +35,9 @@ module.exports = function (app) {
   //create new Food
   app.post("/api/food", function (req, res) {
     db.Food.create(req.body).then(function (dbFood) {
-      res.json(dbFood);
+      db.Food.findAll({ include: [db.Meal] }).then(function (dbFood) {
+        res.json(dbFood);
+      });
     });
   });
 
