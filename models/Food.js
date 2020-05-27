@@ -33,6 +33,9 @@ module.exports = function (sequelize, DataTypes) {
     Food.belongsTo(models.Meal, {
       onDelete: "cascade",
     });
+    Food.belongsTo(models.FoodSummary, {
+      onDelete: "cascade",
+    });
   };
   return Food;
 };
