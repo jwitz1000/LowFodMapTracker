@@ -20,7 +20,7 @@ const Login = (props) => {
           {buttonLabel}
         </Button>
       ) : (
-        <Button className="bg-dark border-dark text-white" onClick={toggle}>
+        <Button className="bg-light border-dark text-white" onClick={toggle}>
           {buttonLabel}
         </Button>
       )}

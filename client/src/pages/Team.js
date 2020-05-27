@@ -3,18 +3,19 @@ import React from "react";
 const Team = (props) => {
   return (
     <div>
-      <div class="container team">
-        <div>
+      <div className="container team">
+        <div className="team-banner">
           <img
-            class="logo"
+            className="logo"
             src={process.env.PUBLIC_URL + "/assets/images/logo.png"}
           />
           <h1>Team</h1>
         </div>
-        <div class="row">
-          <div class="col-md-6">
+
+        <div className="row">
+          <div className="col-md-6">
             <img
-              class="team-img"
+              className="team-img"
               alt="founder "
               src={process.env.PUBLIC_URL + "/assets/images/Arman-1.jpeg"}
             />
@@ -23,9 +24,9 @@ const Team = (props) => {
               <p>Ceo & Founder</p>
             </div>
           </div>
-          <div class="col-md-6">
+          <div className="col-md-6">
             <img
-              class="team-img"
+              className="team-img"
               alt="engineer "
               src={process.env.PUBLIC_URL + "/assets/images/Patrick.png"}
             />
