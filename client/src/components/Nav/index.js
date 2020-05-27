@@ -33,9 +33,7 @@ const TheNav = (props) => {
               <NavLink href="/team/">Team Page</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/namrataffy">
-                Privacy Policy
-              </NavLink>
+              <NavLink href="/privacy">Privacy Policy</NavLink>
             </NavItem>
             <NavItem>
               <Login buttonLabel="Login" />
