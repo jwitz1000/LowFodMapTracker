@@ -9,4 +9,8 @@ export default {
   getFoods: function () {
     return axios.get("/api/food");
   },
+  // add a food
+  addFood: function (postData) {
+    return axios.post("/api/food", postData);
+  },
 };

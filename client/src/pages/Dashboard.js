@@ -5,27 +5,27 @@ import FoodList from "../components/FoodList";
 import StatsForm from "../components/Form/Stats";
 
 const Dashboard = (props) => {
-  const [foodState, foodStateDispatch] = useState({});
+  // const [foodState, foodStateDispatch] = useState({});
 
-  useEffect(() => {
-    loadFoods();
-  }, []);
+  // useEffect(() => {
+  //   loadFoods();
+  // }, []);
 
-  function loadFoods() {
-    API.getFoods().then((res) => {
-      foodStateDispatch({
-        foods: [res.data],
-      });
-      console.log(res);
-    });
-  }
+  // function loadFoods() {
+  //   API.getFoods().then((res) => {
+  //     foodStateDispatch({
+  //       foods: [res.data],
+  //     });
+  //     console.log(res);
+  //   });
+  // }
 
   return (
     <div>
       <div className="container mt-5 clearfix">
         <div className="row">
           <div className="col-md-6">
-            <FoodList foods={foodState.foods} />
+            <FoodList />
           </div>
           <div className="col-md-6">
             <StatsForm />
