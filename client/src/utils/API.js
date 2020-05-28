@@ -13,4 +13,12 @@ export default {
   addFood: function (postData) {
     return axios.post("/api/food", postData);
   },
+  // create food Summary
+  createFoodSummary: function (postData) {
+    return axios.post("/api/food-summary", postData);
+  },
+  // Gets food summary with specific date
+  getFoodSummary: function (date) {
+    return axios.get("/api/food-summary/" + date);
+  },
 };

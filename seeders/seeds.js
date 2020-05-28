@@ -1,4 +1,6 @@
 var db = require("../models");
+var moment = require("moment");
+const date = moment().format("YYYY-MM-DD");
 
 // USERS
 let users = [
@@ -30,7 +32,11 @@ function userGenerate(users) {
 userGenerate(users);
 
 // Food summaries
-let foodSummary = [{ UserId: 1 }, { UserId: 2 }, { UserId: 3 }];
+let foodSummary = [
+  { UserId: 1 },
+  { UserId: 2 },
+  { UserId: 3, createdDate: date },
+];
 function foodSummaryGenerate(foodSummary) {
   for (var i = 0; i < foodSummary.length; i++) {
     db.FoodSummary.create(foodSummary[i]);
