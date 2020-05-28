@@ -30,7 +30,7 @@ export default {
     return axios.post("/api/health", postData);
   },
   // create health Summary
-  updateHealthSummary: function (userId, postData) {
-    return axios.put("/api/health/" + userId, postData);
+  updateHealthSummary: function (id, postData) {
+    return axios.put("/api/health/" + id, postData);
   },
 };

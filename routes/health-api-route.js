@@ -40,11 +40,18 @@ module.exports = function (app) {
   // update HealthSummary
   app.put("/api/health/:id", function (req, res) {
     db.HealthSummary.update(req.body, {
+      returning: true,
       where: { id: req.params.id },
-      include: [db.User],
-    }).then((dbHealthSummary) => {
-      res.json(dbHealthSummary);
-    });
+    }).then(
+      db.HealthSummary.findOne({
+        where: {
+          id: req.params.id,
+        },
+        include: [db.User],
+      }).then(function (dbHealthSummary) {
+        res.json(dbHealthSummary);
+      })
+    );
   });
 
   //create new HealthSummary
