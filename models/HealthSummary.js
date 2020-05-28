@@ -11,6 +11,9 @@ module.exports = function (sequelize, DataTypes) {
           .format("MMMM Do YYYY, h:mm a");
       },
     },
+    createdDate: {
+      type: DataTypes.DATE,
+    },
     bowelMovements: {
       type: DataTypes.FLOAT,
       allowNull: true,

@@ -20,7 +20,6 @@ const FoodList = (props) => {
   // checks to see if there is a food summary for given day, if so, set the state of food summary and foods
   function loadFoodSummary() {
     API.getFoodSummary(date + "T00:00:00.000Z").then((res) => {
-      console.log(res);
       if (res.data.length > 0) {
         foodSummaryStateDispatch({
           id: res.data[0].id,
@@ -32,9 +31,11 @@ const FoodList = (props) => {
     });
   }
 
+  // adding food to list
   function addFood(e) {
     e.preventDefault();
 
+    // if no food summary exists, make one
     if (!foodSummaryState.id) {
       API.createFoodSummary({ createdDate: date + "T00:00:00.000Z" }).then(
         (results) => {
@@ -42,35 +43,34 @@ const FoodList = (props) => {
             id: results.data.id,
           });
 
+          // add food to the food summary
           API.addFood({
             label: foodInput.current.value,
             allowed: true,
             FoodSummaryId: results.data.id,
           })
             .then((results) => {
-              console.log(results);
               foodStateDispatch((prevState) => ({
                 foods: [...prevState.foods, results.data],
               }));
-              console.log(foodState.foods);
               foodInput.current.value = "";
             })
             .catch((err) => console.log(err));
         }
       );
-    } else {
+    }
+    // if a food summary already exists, just add the food
+    else {
       API.addFood({
         label: foodInput.current.value,
         allowed: true,
         FoodSummaryId: foodSummaryState.id,
       })
         .then((results) => {
-          console.log(results);
           foodStateDispatch((prevState) => {
             return { foods: [...prevState.foods, results.data] };
           });
           foodInput.current.value = "";
-          console.log(foodState);
         })
         .catch((err) => console.log(err));
     }

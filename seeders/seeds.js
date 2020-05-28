@@ -84,3 +84,17 @@ function foodGenerate(foods) {
 }
 
 foodGenerate(foods);
+
+// health summaries
+let healthSummary = [
+  { UserId: 1 },
+  { UserId: 2 },
+  { UserId: 3, createdDate: date },
+];
+function healthSummaryGenerate(healthSummary) {
+  for (var i = 0; i < healthSummary.length; i++) {
+    db.HealthSummary.create(healthSummary[i]);
+  }
+}
+
+healthSummaryGenerate(healthSummary);

@@ -3,7 +3,7 @@ import React from "react";
 const Team = (props) => {
   return (
     <div>
-      <div class="container team">
+      <div class="container ">
         <div>
           <img
             class="logo"
@@ -11,7 +11,7 @@ const Team = (props) => {
           />
           <h1>Team</h1>
         </div>
-        <div class="row">
+        <div class="row team">
           <div class="col-md-4">
             <img
               class="team-img"
@@ -31,7 +31,7 @@ const Team = (props) => {
             />
             <div>
               <h4>Patrick Panattoni</h4>
-              <p>Founding Engineer</p>
+              <p>BioMedical Engineer</p>
             </div>
           </div>
           <div class="col-md-4">

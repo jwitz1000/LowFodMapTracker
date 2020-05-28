@@ -21,4 +21,16 @@ export default {
   getFoodSummary: function (date) {
     return axios.get("/api/food-summary/" + date);
   },
+  // Gets health summary with specific date
+  getHealthSummary: function (date) {
+    return axios.get("/api/health/date/" + date);
+  },
+  // create health Summary
+  createHealthSummary: function (postData) {
+    return axios.post("/api/health", postData);
+  },
+  // create health Summary
+  updateHealthSummary: function (userId, postData) {
+    return axios.put("/api/health/" + userId, postData);
+  },
 };
