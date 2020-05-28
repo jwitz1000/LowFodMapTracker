@@ -79,11 +79,11 @@ const FoodList = (props) => {
   return (
     <div>
       <h1>Foods</h1>
-      <ul className="list-group payer-list">
+      <ul className="list-group">
         {foodState.foods.length > 0
           ? foodState.foods.map((food) => {
               return (
-                <li key={food.id}>
+                <li className="list-group-item" key={food.id}>
                   <span>{food.label}</span>
                 </li>
               );

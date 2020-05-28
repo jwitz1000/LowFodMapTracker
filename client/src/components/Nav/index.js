@@ -29,11 +29,18 @@ const TheNav = (props) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto " navbar>
+            <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle nav caret>
+                Pages
+              </DropdownToggle>
+              <DropdownMenu right>
+                <DropdownItem href="/dashboard">Dashboard</DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem>Meal Planner</DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
             <NavItem>
               <NavLink href="/team/">Team Page</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/privacy">Privacy Policy</NavLink>
             </NavItem>
             <NavItem>
               <Login buttonLabel="Login" />
