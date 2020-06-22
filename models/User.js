@@ -19,6 +19,9 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   User.associate = function (models) {
+    User.hasMany(models.FoodSummary, {
+      onDelete: "cascade",
+    });
     User.hasMany(models.Meal, {
       onDelete: "cascade",
     });

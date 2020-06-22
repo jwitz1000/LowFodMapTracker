@@ -1,4 +1,7 @@
 module.exports = function (sequelize, DataTypes) {
+  var moment = require("moment");
+  var moment = require("moment-timezone");
+
   var HealthSummary = sequelize.define("HealthSummary", {
     createdAt: {
       type: DataTypes.DATE,
@@ -7,6 +10,9 @@ module.exports = function (sequelize, DataTypes) {
           .tz(this.getDataValue("createdAt"), "America/Los_Angeles")
           .format("MMMM Do YYYY, h:mm a");
       },
+    },
+    createdDate: {
+      type: DataTypes.DATE,
     },
     bowelMovements: {
       type: DataTypes.FLOAT,

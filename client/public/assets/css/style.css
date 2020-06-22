@@ -1,7 +1,6 @@
 /* GLOBALS
 ========================================================= */
 body {
-  background-image: url(../img/bg-pattern.png);
   background-color: #fff;
   color: #343a40;
 }
@@ -437,7 +436,31 @@ footer small a {
   min-height: calc(100% - 128px);
 }
 
+/* NEW */
 .arman-title {
-  color: green;
+  color: #e6ffe1;
   font-size: 100px;
+}
+
+/* Team Page */
+.team {
+  text-align: center;
+}
+.team-img {
+  width: 150px;
+  height: 200px;
+  border: 0;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+/* End of Team PAge */
+
+/* Side bar */
+
+/*End of Side bar */
+
+/* date */
+.date-title {
+  border-bottom: 2px solid rgba(203, 200, 200, 0.543);
 }

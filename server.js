@@ -13,6 +13,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+require("./routes/food-summary-api-route.js")(app);
 require("./routes/food-api-route.js")(app);
 require("./routes/user-api-route.js")(app);
 require("./routes/meal-api-route.js")(app);
@@ -22,7 +23,7 @@ app.get("*", (_, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-db.sequelize.sync({ force: false }).then(function () {
+db.sequelize.sync({ force: true }).then(function () {
   app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
   });

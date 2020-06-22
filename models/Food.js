@@ -27,14 +27,13 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.FLOAT,
       allowNull: true,
     },
-    safe: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-    },
   });
 
   Food.associate = function (models) {
     Food.belongsTo(models.Meal, {
+      onDelete: "cascade",
+    });
+    Food.belongsTo(models.FoodSummary, {
       onDelete: "cascade",
     });
   };
