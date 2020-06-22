@@ -37,10 +37,10 @@ const StatsForm = (props) => {
         }
       });
     } else {
-      let data = { stress: 10 };
+      let data = { stress: 12200 };
 
       API.updateHealthSummary(formState.stats.id, data).then((res) => {
-        console.log(res);
+        console.log(res.data);
         formStateDispatch({
           stats: res.data,
         });

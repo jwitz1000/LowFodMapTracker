@@ -42,7 +42,7 @@ module.exports = function (app) {
     db.HealthSummary.update(req.body, {
       returning: true,
       where: { id: req.params.id },
-    }).then(
+    }).then(function (hi) {
       db.HealthSummary.findOne({
         where: {
           id: req.params.id,
@@ -50,8 +50,8 @@ module.exports = function (app) {
         include: [db.User],
       }).then(function (dbHealthSummary) {
         res.json(dbHealthSummary);
-      })
-    );
+      });
+    });
   });
 
   //create new HealthSummary
