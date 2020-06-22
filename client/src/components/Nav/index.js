@@ -36,6 +36,8 @@ const TheNav = (props) => {
               <DropdownMenu right>
                 <DropdownItem href="/dashboard">Dashboard</DropdownItem>
                 <DropdownItem divider />
+                <DropdownItem href="/dashboard">Data</DropdownItem>
+                <DropdownItem divider />
                 <DropdownItem>Meal Planner</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
@@ -44,9 +46,6 @@ const TheNav = (props) => {
             </NavItem>
             <NavItem>
               <Login buttonLabel="Login" />
-            </NavItem>
-            <NavItem>
-              <SignUp buttonLabel="SignUp" />
             </NavItem>
           </Nav>
         </Collapse>
