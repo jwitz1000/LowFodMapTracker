@@ -32,6 +32,9 @@ module.exports = function (sequelize, DataTypes) {
     Meal.belongsTo(models.User, {
       onDelete: "cascade",
     });
+    Meal.belongsTo(models.FoodSummary, {
+      onDelete: "cascade",
+    });
     Meal.hasMany(models.Food, {
       onDelete: "cascade",
     });
