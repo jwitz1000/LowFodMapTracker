@@ -4,7 +4,9 @@ import API from "../../utils/API";
 import moment from "moment";
 
 const StatsForm = (props) => {
-  const [formState, formStateDispatch] = useState({});
+  const [formState, formStateDispatch] = useState({
+    createdDate: moment().format("YYYY-MM-DD") + "T00:00:00.000Z",
+  });
   const date = moment().format("YYYY-MM-DD");
 
   // load health summary
@@ -18,6 +20,7 @@ const StatsForm = (props) => {
       console.log(res);
       if (res.data.length > 0) {
         formStateDispatch({
+          ...formState,
           stats: res.data[0],
         });
       }
@@ -26,7 +29,7 @@ const StatsForm = (props) => {
 
   function submitForm(e) {
     e.preventDefault();
-    let data = { stress: 8, createdDate: date + "T00:00:00.000Z" };
+    let data = { stress: 8 };
     if (!formState.stats) {
       API.createHealthSummary(data).then((res) => {
         console.log(res);
@@ -37,7 +40,7 @@ const StatsForm = (props) => {
         }
       });
     } else {
-      let data = { stress: 12200 };
+      let data = formState.stats;
 
       API.updateHealthSummary(formState.stats.id, data).then((res) => {
         console.log(res.data);
@@ -48,6 +51,11 @@ const StatsForm = (props) => {
     }
   }
 
+  const handleChange = (event) => {
+    let { name, value } = event.target;
+    formStateDispatch({ ...formState, stats: { [name]: value } });
+  };
+
   return (
     <div>
       <h1>Stats</h1>
@@ -57,9 +65,21 @@ const StatsForm = (props) => {
           <Input
             type="text"
             value={formState.stats ? formState.stats.stress : ""}
-            name="password"
+            name="stress"
             id="stress"
             placeholder="1,2,3"
+            onChange={handleChange}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="sleep">sleep</Label>
+          <Input
+            type="text"
+            value={formState.stats ? formState.stats.sleep : ""}
+            name="sleep"
+            id="sleep"
+            placeholder="1,2,3"
+            onChange={handleChange}
           />
         </FormGroup>
 
