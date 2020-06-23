@@ -36,6 +36,8 @@ const StatsForm = (props) => {
       let data = {
         createdDate: formState.createdDate,
         stress: formState.stats.stress,
+        bowelMovements: formState.stats.bowelMovements,
+        blood: formState.stats.blood,
       };
       API.createHealthSummary(data).then((res) => {
         console.log(res);
@@ -49,7 +51,11 @@ const StatsForm = (props) => {
       });
     } else {
       console.log(formState);
-      let data = { stress: formState.stats.stress };
+      let data = {
+        stress: formState.stats.stress,
+        bowelMovements: formState.stats.bowelMovements,
+        blood: formState.stats.blood,
+      };
       console.log(data);
       API.updateHealthSummary(formState.stats.id, data).then((res) => {
         console.log(res.data);
@@ -69,12 +75,19 @@ const StatsForm = (props) => {
     });
   };
 
+  const handleCheckChange = (event) => {
+    formStateDispatch({
+      ...formState,
+      stats: { ...formState.stats, [event.target.name]: event.target.checked },
+    });
+  };
+
   return (
     <div>
       <h1>Stats</h1>
       <Form onSubmit={submitForm}>
         <FormGroup>
-          <Label for="stress">stress</Label>
+          <Label for="stress">Stress Level</Label>
           <Input
             type="text"
             value={formState.stats ? formState.stats.stress : ""}
@@ -85,17 +98,28 @@ const StatsForm = (props) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="sleep">sleep</Label>
+          <Label for="bowelMovements">Number of Bowel Movements</Label>
           <Input
             type="text"
-            value={formState.stats ? formState.stats.sleep : ""}
-            name="sleep"
-            id="sleep"
+            value={formState.stats ? formState.stats.bowelMovements : ""}
+            name="bowelMovements"
+            id="bowelMovements"
             placeholder="1,2,3"
             onChange={handleChange}
           />
         </FormGroup>
-
+        <FormGroup check>
+          <Input
+            type="checkbox"
+            name="blood"
+            id="blood"
+            onChange={handleCheckChange}
+            checked={formState.stats ? formState.stats.blood : false}
+          />
+          <Label for="blood" check>
+            Blood
+          </Label>
+        </FormGroup>
         <Button>Submit</Button>
       </Form>
     </div>

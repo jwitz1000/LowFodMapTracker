@@ -36,7 +36,7 @@ const TheNav = (props) => {
               <DropdownMenu right>
                 <DropdownItem href="/dashboard">Dashboard</DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem>Meal Planner</DropdownItem>
+                <DropdownItem>Data</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem>
