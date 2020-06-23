@@ -23,6 +23,7 @@ const StatsForm = (props) => {
         formStateDispatch({
           ...formState,
           stats: res.data[0],
+          exist: true,
         });
       }
     });
