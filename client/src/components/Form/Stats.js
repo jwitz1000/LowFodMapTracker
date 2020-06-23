@@ -188,7 +188,7 @@ const StatsForm = (props) => {
             onChange={handleChange}
           />
         </FormGroup>
-        <Button>Submit</Button>
+        <Button>{formState.exist === true ? "Update" : "Submit"}</Button>
       </Form>
     </div>
   );
