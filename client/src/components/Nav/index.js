@@ -28,7 +28,12 @@ const TheNav = (props) => {
         <NavbarBrand href="/">Low Fod Map Tracker</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="ml-auto " navbar>
+          <Nav className="mr-auto" navbar>
+            <NavItem>
+              <NavLink href="/team/">Team Page</NavLink>
+            </NavItem>
+          </Nav>
+          <Nav className="ml-auto" navbar>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 Pages
@@ -39,9 +44,7 @@ const TheNav = (props) => {
                 <DropdownItem>Data</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
-            <NavItem>
-              <NavLink href="/team/">Team Page</NavLink>
-            </NavItem>
+
             <NavItem>
               <Login buttonLabel="Login" />
             </NavItem>

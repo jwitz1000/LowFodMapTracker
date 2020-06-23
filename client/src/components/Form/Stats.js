@@ -43,7 +43,6 @@ const StatsForm = (props) => {
         diahrrea: formState.stats.diahrrea,
       };
       API.createHealthSummary(data).then((res) => {
-        console.log(res);
         if (res.data) {
           formStateDispatch({
             ...formState,
@@ -53,7 +52,6 @@ const StatsForm = (props) => {
         }
       });
     } else {
-      console.log(formState);
       let data = {
         stress: formState.stats.stress,
         pain: formState.stats.pain,
@@ -62,9 +60,7 @@ const StatsForm = (props) => {
         bloating: formState.stats.bloating,
         diahrrea: formState.stats.diahrrea,
       };
-      console.log(data);
       API.updateHealthSummary(formState.stats.id, data).then((res) => {
-        console.log(res.data);
         formStateDispatch({
           ...formState,
           stats: res.data,
