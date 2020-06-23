@@ -31,6 +31,20 @@ function userGenerate(users) {
 
 userGenerate(users);
 
+// health summaries
+let healthSummary = [
+  { UserId: 1, stress: 5, createdDate: date },
+  { UserId: 1, stress: 4, createdDate: date },
+  { UserId: 1, stress: 3, createdDate: date },
+];
+function healthSummaryGenerate(healthSummary) {
+  for (var i = 0; i < healthSummary.length; i++) {
+    db.HealthSummary.create(healthSummary[i]);
+  }
+}
+
+healthSummaryGenerate(healthSummary);
+
 // Food summaries
 let foodSummary = [
   { UserId: 1 },
@@ -84,17 +98,3 @@ function foodGenerate(foods) {
 }
 
 foodGenerate(foods);
-
-// health summaries
-let healthSummary = [
-  { UserId: 1 },
-  { UserId: 2 },
-  { UserId: 3, createdDate: date },
-];
-function healthSummaryGenerate(healthSummary) {
-  for (var i = 0; i < healthSummary.length; i++) {
-    db.HealthSummary.create(healthSummary[i]);
-  }
-}
-
-healthSummaryGenerate(healthSummary);

@@ -26,21 +26,47 @@ const Data = (props) => {
     loadData();
   }, []);
 
+  function makeChartData() {
+    let x = [];
+    let y = [];
+    for (let i = 0; i < dataState.length; i++) {
+      x.push(dataState[i].id);
+      y.push(dataState[i].stress);
+    }
+
+    let data = {
+      datasets: [
+        {
+          label: "Stress",
+          fill: false,
+          lineTension: 0.5,
+          backgroundColor: "rgba(75,192,192,1)",
+          borderColor: "rgba(0,0,0,1)",
+          borderWidth: 2,
+          data: y,
+        },
+      ],
+      labels: x,
+    };
+    return data;
+  }
+
   function loadData() {
     console.log("worked");
     API.getData(1).then((res) => {
-      console.log(res);
+      console.log(res.data);
+      dataStateDispatch(res.data);
     });
   }
 
   return (
     <div>
       <Line
-        data={state}
+        data={dataState.length > 0 ? makeChartData() : null}
         options={{
           title: {
             display: true,
-            text: "Hours of sleep per day",
+            text: "Stress",
             fontSize: 20,
           },
           legend: {
