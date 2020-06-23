@@ -464,3 +464,10 @@ footer small a {
 .date-title {
   border-bottom: 2px solid rgba(203, 200, 200, 0.543);
 }
+
+/* new */
+.iconImg {
+  width: 20px;
+  height: 20px;
+  float: right;
+}

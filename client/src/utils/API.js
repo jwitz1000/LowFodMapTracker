@@ -13,6 +13,10 @@ export default {
   addFood: function (postData) {
     return axios.post("/api/food", postData);
   },
+  // delete a food
+  deleteFood: function (id) {
+    return axios.delete("/api/food/" + id);
+  },
   // create food Summary
   createFoodSummary: function (postData) {
     return axios.post("/api/food-summary", postData);

@@ -76,6 +76,13 @@ const FoodList = (props) => {
     }
   }
 
+  // deleting a food
+  function deleteFood(id) {
+    API.deleteFood(id).then((res) => {
+      console.log("hi");
+    });
+  }
+
   return (
     <div>
       <h1>Foods</h1>
@@ -85,6 +92,12 @@ const FoodList = (props) => {
               return (
                 <li className="list-group-item" key={food.id}>
                   <span>{food.label}</span>
+                  <input
+                    type="image"
+                    className="iconImg "
+                    src={process.env.PUBLIC_URL + "/assets/images/x.png"}
+                    onClick={() => deleteFood(food.id)}
+                  />
                 </li>
               );
             })
