@@ -30,6 +30,10 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.FLOAT,
       allowNull: true,
     },
+    sleep: {
+      type: DataTypes.FLOAT,
+      allowNull: true,
+    },
     blood: {
       type: DataTypes.BOOLEAN,
       allowNull: true,
@@ -37,6 +41,13 @@ module.exports = function (sequelize, DataTypes) {
     diahrrea: {
       type: DataTypes.BOOLEAN,
       allowNull: true,
+    },
+    other: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        len: [1, 250],
+      },
     },
   });
 

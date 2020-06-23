@@ -35,12 +35,14 @@ const StatsForm = (props) => {
     if (!formState.exist === true) {
       let data = {
         createdDate: formState.createdDate,
+        sleep: formState.stats.sleep,
         stress: formState.stats.stress,
         pain: formState.stats.pain,
         bowelMovements: formState.stats.bowelMovements,
         blood: formState.stats.blood,
         bloating: formState.stats.bloating,
         diahrrea: formState.stats.diahrrea,
+        other: formState.stats.other,
       };
       API.createHealthSummary(data).then((res) => {
         if (res.data) {
@@ -53,12 +55,14 @@ const StatsForm = (props) => {
       });
     } else {
       let data = {
+        sleep: formState.stats.sleep,
         stress: formState.stats.stress,
         pain: formState.stats.pain,
         bowelMovements: formState.stats.bowelMovements,
         blood: formState.stats.blood,
         bloating: formState.stats.bloating,
         diahrrea: formState.stats.diahrrea,
+        other: formState.stats.other,
       };
       API.updateHealthSummary(formState.stats.id, data).then((res) => {
         formStateDispatch({
@@ -88,6 +92,17 @@ const StatsForm = (props) => {
     <div>
       <h1>Stats</h1>
       <Form onSubmit={submitForm}>
+        <FormGroup>
+          <Label for="sleep">Hours of Sleep</Label>
+          <Input
+            type="text"
+            value={formState.stats ? formState.stats.sleep : ""}
+            name="sleep"
+            id="sleep"
+            placeholder="6,7,8"
+            onChange={handleChange}
+          />
+        </FormGroup>
         <FormGroup>
           <Label for="stress">Stress Level</Label>
           <Input
@@ -121,6 +136,8 @@ const StatsForm = (props) => {
             onChange={handleChange}
           />
         </FormGroup>
+        <br></br>
+
         <h6>Select from the following:</h6>
         <FormGroup check>
           <Input
@@ -159,6 +176,18 @@ const StatsForm = (props) => {
           </Label>
         </FormGroup>
         <br></br>
+
+        <FormGroup>
+          <Label for="other">Other Symptoms</Label>
+          <Input
+            type="textarea"
+            value={formState.stats ? formState.stats.other : ""}
+            name="other"
+            id="other"
+            placeholder="..."
+            onChange={handleChange}
+          />
+        </FormGroup>
         <Button>Submit</Button>
       </Form>
     </div>
