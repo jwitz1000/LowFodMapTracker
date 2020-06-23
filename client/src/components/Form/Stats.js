@@ -6,6 +6,7 @@ import moment from "moment";
 const StatsForm = (props) => {
   const [formState, formStateDispatch] = useState({
     createdDate: moment().format("YYYY-MM-DD") + "T00:00:00.000Z",
+    exist: false,
   });
   const date = moment().format("YYYY-MM-DD");
 
@@ -29,22 +30,30 @@ const StatsForm = (props) => {
 
   function submitForm(e) {
     e.preventDefault();
-    let data = { stress: 8 };
-    if (!formState.stats) {
+
+    if (!formState.exist === true) {
+      let data = {
+        createdDate: formState.createdDate,
+        stress: formState.stats.stress,
+      };
       API.createHealthSummary(data).then((res) => {
         console.log(res);
         if (res.data) {
           formStateDispatch({
+            ...formState,
             stats: res.data,
+            exist: true,
           });
         }
       });
     } else {
-      let data = formState.stats;
-
+      console.log(formState);
+      let data = { stress: formState.stats.stress };
+      console.log(data);
       API.updateHealthSummary(formState.stats.id, data).then((res) => {
         console.log(res.data);
         formStateDispatch({
+          ...formState,
           stats: res.data,
         });
       });
@@ -53,7 +62,10 @@ const StatsForm = (props) => {
 
   const handleChange = (event) => {
     let { name, value } = event.target;
-    formStateDispatch({ ...formState, stats: { [name]: value } });
+    formStateDispatch({
+      ...formState,
+      stats: { ...formState.stats, [name]: value },
+    });
   };
 
   return (
