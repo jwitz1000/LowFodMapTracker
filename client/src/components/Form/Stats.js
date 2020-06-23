@@ -36,8 +36,11 @@ const StatsForm = (props) => {
       let data = {
         createdDate: formState.createdDate,
         stress: formState.stats.stress,
+        pain: formState.stats.pain,
         bowelMovements: formState.stats.bowelMovements,
         blood: formState.stats.blood,
+        bloating: formState.stats.bloating,
+        diahrrea: formState.stats.diahrrea,
       };
       API.createHealthSummary(data).then((res) => {
         console.log(res);
@@ -53,8 +56,11 @@ const StatsForm = (props) => {
       console.log(formState);
       let data = {
         stress: formState.stats.stress,
+        pain: formState.stats.pain,
         bowelMovements: formState.stats.bowelMovements,
         blood: formState.stats.blood,
+        bloating: formState.stats.bloating,
+        diahrrea: formState.stats.diahrrea,
       };
       console.log(data);
       API.updateHealthSummary(formState.stats.id, data).then((res) => {
@@ -93,7 +99,18 @@ const StatsForm = (props) => {
             value={formState.stats ? formState.stats.stress : ""}
             name="stress"
             id="stress"
-            placeholder="1,2,3"
+            placeholder="1-10"
+            onChange={handleChange}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="pain">Pain Level</Label>
+          <Input
+            type="text"
+            value={formState.stats ? formState.stats.pain : ""}
+            name="pain"
+            id="pain"
+            placeholder="1-10"
             onChange={handleChange}
           />
         </FormGroup>
@@ -108,6 +125,7 @@ const StatsForm = (props) => {
             onChange={handleChange}
           />
         </FormGroup>
+        <h6>Select from the following:</h6>
         <FormGroup check>
           <Input
             type="checkbox"
@@ -120,6 +138,31 @@ const StatsForm = (props) => {
             Blood
           </Label>
         </FormGroup>
+        <FormGroup check>
+          <Input
+            type="checkbox"
+            name="bloating"
+            id="bloating"
+            onChange={handleCheckChange}
+            checked={formState.stats ? formState.stats.bloating : false}
+          />
+          <Label for="bloating" check>
+            Bloating
+          </Label>
+        </FormGroup>
+        <FormGroup check>
+          <Input
+            type="checkbox"
+            name="diahrrea"
+            id="diahrrea"
+            onChange={handleCheckChange}
+            checked={formState.stats ? formState.stats.diahrrea : false}
+          />
+          <Label for="diahrrea" check>
+            Diahrrea
+          </Label>
+        </FormGroup>
+        <br></br>
         <Button>Submit</Button>
       </Form>
     </div>
