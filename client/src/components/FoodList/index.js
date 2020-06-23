@@ -73,13 +73,14 @@ const FoodList = (props) => {
           foodInput.current.value = "";
         })
         .catch((err) => console.log(err));
+      console.log(foodState);
     }
   }
 
   // deleting a food
-  function deleteFood(id) {
-    API.deleteFood(id).then((res) => {
-      console.log("hi");
+  function deleteFood(id, foodSummaryId) {
+    API.deleteFood(id, foodSummaryId).then((res) => {
+      loadFoodSummary();
     });
   }
 
@@ -96,7 +97,7 @@ const FoodList = (props) => {
                     type="image"
                     className="iconImg "
                     src={process.env.PUBLIC_URL + "/assets/images/x.png"}
-                    onClick={() => deleteFood(food.id)}
+                    onClick={() => deleteFood(food.id, food.FoodSummaryId)}
                   />
                 </li>
               );

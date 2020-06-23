@@ -61,10 +61,11 @@ module.exports = function (app) {
   });
 
   // delete Food
-  app.delete("/api/food/:id", function (req, res) {
+  app.delete("/api/food/:id/food-summary/:foodsummaryid", function (req, res) {
     db.Food.destroy({
       where: {
         id: req.params.id,
+        FoodSummaryId: req.params.foodsummaryid,
       },
     }).then(function (dbFood) {
       res.json(dbFood);

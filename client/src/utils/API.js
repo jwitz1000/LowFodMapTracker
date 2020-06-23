@@ -14,8 +14,8 @@ export default {
     return axios.post("/api/food", postData);
   },
   // delete a food
-  deleteFood: function (id) {
-    return axios.delete("/api/food/" + id);
+  deleteFood: function (id, foodSummaryId) {
+    return axios.delete("/api/food/" + id + "/food-summary/" + foodSummaryId);
   },
   // create food Summary
   createFoodSummary: function (postData) {
@@ -36,5 +36,9 @@ export default {
   // create health Summary
   updateHealthSummary: function (id, postData) {
     return axios.put("/api/health/" + id, postData);
+  },
+  // get all data for user (for now)
+  getData: function (userId) {
+    return axios.get("/api/health/user/" + userId);
   },
 };
