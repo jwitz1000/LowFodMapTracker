@@ -61,20 +61,29 @@ const Data = (props) => {
 
   return (
     <div>
-      <Line
-        data={dataState.length > 0 ? makeChartData() : null}
-        options={{
-          title: {
-            display: true,
-            text: "Stress",
-            fontSize: 20,
-          },
-          legend: {
-            display: true,
-            position: "right",
-          },
-        }}
-      />
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">toggle</div>
+        </div>
+        <div className="row">
+          <div className="col-md-12">
+            <Line
+              data={dataState.length > 0 ? makeChartData() : null}
+              options={{
+                title: {
+                  display: true,
+                  text: "Stress",
+                  fontSize: 20,
+                },
+                legend: {
+                  display: true,
+                  position: "right",
+                },
+              }}
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
