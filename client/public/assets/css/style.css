@@ -465,9 +465,36 @@ footer small a {
   border-bottom: 2px solid rgba(203, 200, 200, 0.543);
 }
 
-/* new */
+/* new for x icon */
 .iconImg {
   width: 20px;
   height: 20px;
   float: right;
+}
+
+/* nofitication*/
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  30%,
+  75% {
+    opacity: 1;
+  }
+}
+
+.updateMessage {
+  width: 150px;
+  padding: 8px;
+  font-size: 12px;
+  border-radius: 10000px;
+  background: rgb(57, 237, 7);
+  color: white;
+  margin: 10px auto;
+  text-align: center;
+  opacity: 1;
+  justify-content: space-evenly;
+  animation: fadeInOut 1.5s ease-in-out forwards;
 }

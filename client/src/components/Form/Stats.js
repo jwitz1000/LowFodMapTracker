@@ -69,6 +69,7 @@ const StatsForm = (props) => {
           ...formState,
           stats: res.data,
         });
+        update();
       });
     }
   }
@@ -86,6 +87,18 @@ const StatsForm = (props) => {
       ...formState,
       stats: { ...formState.stats, [event.target.name]: event.target.checked },
     });
+  };
+
+  // notification
+  const [showUpdateText, setShowUpdateText] = useState(false);
+
+  const update = () => {
+    // show the button
+    setShowUpdateText(true);
+    // remove the button after 1500ms
+    setTimeout(() => {
+      setShowUpdateText(false);
+    }, 1500);
   };
 
   return (
@@ -189,6 +202,9 @@ const StatsForm = (props) => {
           />
         </FormGroup>
         <Button>{formState.exist === true ? "Update" : "Submit"}</Button>
+        {showUpdateText && (
+          <div className="updateMessage">Update Successful!</div>
+        )}
       </Form>
     </div>
   );
