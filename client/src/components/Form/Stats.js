@@ -4,10 +4,14 @@ import API from "../../utils/API";
 import moment from "moment";
 
 const StatsForm = (props) => {
+  // setting up state variables
   const [formState, formStateDispatch] = useState({
     createdDate: moment().format("YYYY-MM-DD") + "T00:00:00.000Z",
     exist: false,
   });
+  const [showUpdateText, setShowUpdateText] = useState(false);
+
+  // date
   const date = moment().format("YYYY-MM-DD");
 
   // load health summary
@@ -90,7 +94,6 @@ const StatsForm = (props) => {
   };
 
   // notification
-  const [showUpdateText, setShowUpdateText] = useState(false);
 
   const update = () => {
     // show the button
