@@ -25,7 +25,7 @@ const TheNav = (props) => {
   return (
     <div>
       <Navbar style={{ backgroundColor: `#e6ffe1` }} light expand="md">
-        <NavbarBrand href="/">Low FOD Map Tracker</NavbarBrand>
+        <NavbarBrand href="/">Low FODMAP Tracker</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
@@ -44,7 +44,6 @@ const TheNav = (props) => {
                 <DropdownItem href="/data">Data</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
-
             <NavItem>
               <Login buttonLabel="Login" />
             </NavItem>
